@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation'
 import Address from 'components/Navbar/Address'
 import TabGroup from 'components/Navbar/TabGroup'
 import ArrowLeftIcon from 'public/assets/icons/arrow-left.svg'
-import Play from 'public/assets/icons/play.svg'
 import UserButton from './UserButton'
+import HamburgerMenu from './HamburgerMenu'
 
 export default function Navbar() {
   const router = useRouter()
@@ -28,7 +28,7 @@ export default function Navbar() {
           <TabGroup params={params} />
           <UserButton />
         </nav> */}
-        <Play />
+        <HamburgerMenu />
       </div>
     </div>
   )
