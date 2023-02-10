@@ -5,10 +5,33 @@ import Address from 'components/Navbar/Address'
 import TabGroup from 'components/Navbar/TabGroup'
 import ArrowLeftIcon from 'public/assets/icons/arrow-left.svg'
 import UserButton from './UserButton'
-import HamburgerMenu from './HamburgerMenu'
+import HamburgerMenu from './DropDownMenu/HamburgerMenu'
+import DropDown from './DropDownMenu/DropDown'
+import { useState } from 'react'
+import Menu from './DropDownMenu/Menu'
 
 export default function Navbar() {
   const router = useRouter()
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleButtonClick() {
+    setIsOpen(!isOpen)
+  }
+
+  //Temp
+  const tempVals = {
+    titleIndex: '2',
+    title: '51% Attack',
+    lessons: [
+      '1,000 blocks',
+      'You vs. Amestris',
+      'Together we are strong(er)',
+      'The winning strategy',
+    ],
+  }
+
+  console.log(tempVals.lessons)
 
   return (
     <div className="left-0 top-0 w-full">
@@ -28,8 +51,16 @@ export default function Navbar() {
           <TabGroup params={params} />
           <UserButton />
         </nav> */}
-        <HamburgerMenu />
+        {/* <DropDown titleIndex={tempVals.titleIndex} title={tempVals.title} lessons={tempVals.lessons} /> */}
+        <HamburgerMenu isOpen={isOpen} clicked={handleButtonClick} />
+        <UserButton />
       </div>
+      <Menu
+        isOpen={isOpen}
+        titleIndex={tempVals.titleIndex}
+        title={tempVals.title}
+        lessons={tempVals.lessons}
+      />
     </div>
   )
 }

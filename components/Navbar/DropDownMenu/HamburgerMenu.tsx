@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-export default function HamburgerMenu() {
-  const [isOpen, setIsOpen] = useState(false)
+export default function HamburgerMenu(props) {
+  // const [isOpen, setIsOpen] = useState(false)
 
-  function handleClick() {
-    setIsOpen(!isOpen)
-  }
+  // function handleClick() {
+  //   setIsOpen(!isOpen)
+  // }
 
   const styles = {
     container: {
@@ -28,23 +28,23 @@ export default function HamburgerMenu() {
       transition: 'all 0.2s ease',
     },
     lineTop: {
-      transform: isOpen ? ' translateX(-3px) rotate(-45deg)' : 'none',
+      transform: props.isOpen ? ' translateX(-3px) rotate(-45deg)' : 'none',
       transformOrigin: 'top right',
       marginBottom: '5px',
     },
     lineMiddle: {
-      opacity: isOpen ? 0 : 1,
-      transform: isOpen ? 'translateX(+16px)' : 'none',
+      opacity: props.isOpen ? 0 : 1,
+      transform: props.isOpen ? 'translateX(+16px)' : 'none',
     },
     lineBottom: {
-      transform: isOpen ? ' translateX(-1px) rotate(45deg)' : 'none',
+      transform: props.isOpen ? ' translateX(-1px) rotate(45deg)' : 'none',
       transformOrigin: 'top right',
       marginTop: '5px',
     },
   }
 
   return (
-    <div onClick={handleClick} style={{ ...styles.container }}>
+    <div onClick={props.clicked} style={{ ...styles.container }}>
       <div style={{ ...styles.line, ...styles.lineTop }} />
       <div style={{ ...styles.line, ...styles.lineMiddle }} />
       <div style={{ ...styles.line, ...styles.lineBottom }} />

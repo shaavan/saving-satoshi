@@ -12,7 +12,7 @@ export default function Layout({ children, params }) {
   // const isDesktopSize = false
 
   const [isDesktopSize, setIsDesktopSize] = useState(false)
-  const handleResize = () => setIsDesktopSize(window.innerWidth > 768)
+  const handleResize = () => setIsDesktopSize(window.innerWidth > 1200)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
