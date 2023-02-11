@@ -3,16 +3,16 @@ import React, { useState } from 'react'
 export default function HamburgerMenu(props) {
   const styles = {
     container: {
-      height: '32px',
-      width: '32px',
-      display: 'flex',
-      flexDirection: 'column' as 'column',
-      justifyContent: 'center',
-      alignItems: 'left',
-      cursor: 'pointer',
-      padding: '4px',
-      backgroundColor: 'blur',
-      overflow: 'hidden',
+      // height: '32px',
+      // width: '32px',
+      // display: 'flex',
+      // flexDirection: 'column' as 'column',
+      // justifyContent: 'center',
+      // alignItems: 'left',
+      // cursor: 'pointer',
+      // padding: '4px',
+      // backgroundColor: 'blur',
+      // overflow: 'hidden',
     },
 
     line: {
@@ -40,9 +40,8 @@ export default function HamburgerMenu(props) {
 
   return (
     <div
-      className="mr-4"
+      className="mr-4 flex h-8 w-8 cursor-pointer flex-col items-start justify-center overflow-hidden p-1"
       onClick={props.clicked}
-      style={{ ...styles.container }}
     >
       <div style={{ ...styles.line, ...styles.lineTop }} />
       <div style={{ ...styles.line, ...styles.lineBottom }} />
