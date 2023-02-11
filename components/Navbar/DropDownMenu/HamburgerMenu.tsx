@@ -44,7 +44,11 @@ export default function HamburgerMenu(props) {
   }
 
   return (
-    <div onClick={props.clicked} style={{ ...styles.container }}>
+    <div
+      className="mr-5"
+      onClick={props.clicked}
+      style={{ ...styles.container }}
+    >
       <div style={{ ...styles.line, ...styles.lineTop }} />
       <div style={{ ...styles.line, ...styles.lineMiddle }} />
       <div style={{ ...styles.line, ...styles.lineBottom }} />
