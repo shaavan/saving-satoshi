@@ -23,18 +23,14 @@ export default function HamburgerMenu(props) {
     },
     lineTop: {
       transform: props.isOpen
-        ? ' translateX(0) translateY(-3px) rotate(-45deg)'
+        ? ' translateX(0) translateY(-1px) rotate(-45deg)'
         : 'none',
       transformOrigin: 'top right',
       marginBottom: '5px',
     },
-    lineMiddle: {
-      opacity: props.isOpen ? 0 : 1,
-      transform: props.isOpen ? 'translateX(+16px)' : 'none',
-    },
     lineBottom: {
       transform: props.isOpen
-        ? ' translateX(1px) translateY(2px) rotate(45deg)'
+        ? ' translateX(1px) translateY(4px) rotate(45deg)'
         : 'none',
       transformOrigin: 'top right',
       marginTop: '2px',
@@ -49,7 +45,6 @@ export default function HamburgerMenu(props) {
       style={{ ...styles.container }}
     >
       <div style={{ ...styles.line, ...styles.lineTop }} />
-      {/* <div style={{ ...styles.line, ...styles.lineMiddle }} /> */}
       <div style={{ ...styles.line, ...styles.lineBottom }} />
     </div>
   )
