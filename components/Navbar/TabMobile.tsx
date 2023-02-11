@@ -35,40 +35,27 @@ export default function Tab({
   const isLast = index == count - 1
 
   return (
-    <Tooltip
-      position="bottom"
-      offset={0}
-      content={
-        <div className="flex flex-col">
-          <span className="text-m whitespace-nowrap leading-none text-white/50">
-            Challenge {index + 1}
-          </span>
-          <span className="whitespace-nowrap">{challenge.title}</span>
-        </div>
-      }
+    <Link
+      href={`/chapters/${slug}/${challenge.lessonId}`}
+      title={challenge.title}
+      className={clsx(
+        'justify-left flex items-center border-t border-white/25 px-3 py-2 text-center text-lg text-white/50 transition duration-100 ease-in-out',
+        {
+          'text-white text-opacity-50': !isActive,
+          'hover:bg-black/25 hover:text-white hover:text-opacity-100':
+            status && status.unlocked && !isActive,
+          'bg-black/25 text-opacity-100': isActive,
+          'border-b': isLast,
+        }
+      )}
     >
-      <Link
-        href={`/chapters/${slug}/${challenge.lessonId}`}
-        title={challenge.title}
-        className={clsx(
-          'justify-left flex items-center border-t border-white/25 px-3 py-2 text-center text-lg transition duration-100 ease-in-out',
-          {
-            'text-white text-opacity-50': !isActive,
-            'hover:bg-black/25 hover:text-white hover:text-opacity-100':
-              status && status.unlocked && !isActive,
-            'bg-black/25 text-opacity-100': isActive,
-            'border-b': isLast,
-          }
-        )}
-      >
-        {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
-        {status && !status.unlocked && (
-          <LockIcon className="absolute right-[15px] my-2 mx-4 opacity-50" />
-        )}
-        {status && status.completed && (
-          <CheckIcon className="absolute right-[15px] my-2 mx-4" />
-        )}
-      </Link>
-    </Tooltip>
+      {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
+      {status && !status.unlocked && (
+        <LockIcon className="absolute right-[15px] my-2 mx-4 opacity-50" />
+      )}
+      {status && status.completed && (
+        <CheckIcon className="absolute right-[15px] my-2 mx-4" />
+      )}
+    </Link>
   )
 }

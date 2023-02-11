@@ -30,7 +30,7 @@ export default function Menu(props) {
         top: '67px',
       }}
     >
-      {props.isOpen && <TabGroupMobile params={props.params} />}
+      {<TabGroupMobile isOpen={props.isOpen} params={props.params} />}
     </div>
   )
 }
