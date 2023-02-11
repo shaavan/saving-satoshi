@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuItems from './MenuItems'
+import TabGroupMobile from 'components/Navbar/TabGroupMobile'
 
 export default function Menu(props) {
   //props.isOpen
@@ -36,13 +37,14 @@ export default function Menu(props) {
       }}
     >
       {props.isOpen && (
-        <div style={styles.menuList}>
-          <MenuItems
-            index={props.titleIndex}
-            title={props.title}
-            lessons={props.lessons}
-          />
-        </div>
+        // <div style={styles.menuList}>
+        //   <MenuItems
+        //     index={props.titleIndex}
+        //     title={props.title}
+        //     lessons={props.lessons}
+        //   />
+        // </div>
+        <TabGroupMobile params={props.params} />
       )}
     </div>
   )

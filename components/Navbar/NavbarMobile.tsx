@@ -11,7 +11,7 @@ import { useState } from 'react'
 import Menu from './DropDownMenu/Menu'
 import clsx from 'clsx'
 
-export default function Navbar() {
+export default function Navbar({ params }) {
   const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -71,6 +71,7 @@ export default function Navbar() {
         titleIndex={tempVals.titleIndex}
         title={tempVals.title}
         lessons={tempVals.lessons}
+        params={params}
       />
     </div>
   )

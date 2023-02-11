@@ -12,7 +12,7 @@ export default function Layout({ children, params }) {
   // const isDesktopSize = false
 
   const [isDesktopSize, setIsDesktopSize] = useState(false)
-  const handleResize = () => setIsDesktopSize(window.innerWidth > 1200)
+  const handleResize = () => setIsDesktopSize(window.innerWidth > 700)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -27,7 +27,7 @@ export default function Layout({ children, params }) {
         {isValidChapter && isDesktopSize ? (
           <Navbar params={params} />
         ) : (
-          <NavbarMobile />
+          <NavbarMobile params={params} />
         )}
         {children}
       </div>
