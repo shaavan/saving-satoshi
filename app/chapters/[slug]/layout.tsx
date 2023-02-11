@@ -7,12 +7,21 @@ import { useEffect, useState } from 'react'
 //TODO:
 // This function is async in nature. But you can't use functional components with async function.
 // For now remove the async but later introduce them back and seperate functional component part.
+
+function getWindowWidth() {
+  const { innerWidth: width } = window
+  return width
+}
+
 export default function Layout({ children, params }) {
   const isValidChapter = chapters[params.slug]
-  // const isDesktopSize = false
 
-  const [isDesktopSize, setIsDesktopSize] = useState(false)
-  const handleResize = () => setIsDesktopSize(window.innerWidth > 1500)
+  const desktopSize = 700
+
+  const windowWidth = getWindowWidth()
+  const [isDesktopSize, setIsDesktopSize] = useState(windowWidth > desktopSize)
+
+  const handleResize = () => setIsDesktopSize(window.innerWidth > desktopSize)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
