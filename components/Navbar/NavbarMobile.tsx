@@ -20,20 +20,6 @@ export default function Navbar({ params }) {
     setIsOpen(!isOpen)
   }
 
-  //Temp
-  const tempVals = {
-    titleIndex: '2',
-    title: '51% Attack',
-    lessons: [
-      '1,000 blocks',
-      'You vs. Amestris',
-      'Together we are strong(er)',
-      'The winning strategy',
-    ],
-  }
-
-  console.log(tempVals.lessons)
-
   return (
     <div className="left-0 top-0 w-full">
       <div className="flex items-stretch border-b border-white/80 text-white">
@@ -66,13 +52,7 @@ export default function Navbar({ params }) {
           <UserButton />
         </div>
       </div>
-      <Menu
-        isOpen={isOpen}
-        titleIndex={tempVals.titleIndex}
-        title={tempVals.title}
-        lessons={tempVals.lessons}
-        params={params}
-      />
+      <Menu isOpen={isOpen} params={params} />
     </div>
   )
 }

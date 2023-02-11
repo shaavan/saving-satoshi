@@ -1,6 +1,7 @@
-import Tab from './Tab'
+import TabMobile from './TabMobile'
 import chapters from 'content/chapters'
 import lessons from 'content/lessons'
+import Address from './Address'
 
 export default function TabGroup({ params }) {
   const { slug } = params
@@ -11,6 +12,8 @@ export default function TabGroup({ params }) {
     return null
   }
 
+  const chapterMeta = chapter.metadata
+
   const challenges = chapter.metadata.challenges.map((lessonId) => {
     const { title } = lessons[lessonId].metadata
 
@@ -18,9 +21,13 @@ export default function TabGroup({ params }) {
   })
 
   return (
-    <div className="flex-l flex h-full items-stretch">
+    <div className="mx-4 flex h-full flex-col items-stretch">
+      <div className="px-2 py-3 text-2xl text-white/50">
+        Chapter {chapterMeta.position + 1}.{' '}
+        <span className="ml-1 text-white">{chapterMeta.title}</span>
+      </div>
       {challenges.map((challenge, index) => (
-        <Tab
+        <TabMobile
           key={index}
           count={challenges.length}
           index={index}

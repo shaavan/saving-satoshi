@@ -51,22 +51,22 @@ export default function Tab({
         href={`/chapters/${slug}/${challenge.lessonId}`}
         title={challenge.title}
         className={clsx(
-          'relative flex h-full items-center justify-center border-l border-white/25 px-7 text-center text-lg transition duration-100 ease-in-out',
+          'justify-left flex items-center border-t border-white/25 px-3 py-2 text-center text-lg transition duration-100 ease-in-out',
           {
             'text-white text-opacity-50': !isActive,
             'hover:bg-black/25 hover:text-white hover:text-opacity-100':
               status && status.unlocked && !isActive,
             'bg-black/25 text-opacity-100': isActive,
-            'border-r': isLast,
+            'border-b': isLast,
           }
         )}
       >
-        {index + 1}
+        {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
         {status && !status.unlocked && (
-          <LockIcon className="absolute right-[10px] top-[10px] opacity-50" />
+          <LockIcon className="absolute right-[15px] my-2 mx-4 opacity-50" />
         )}
         {status && status.completed && (
-          <CheckIcon className="absolute right-[5px] top-[5px] h-[20px] w-[20px]" />
+          <CheckIcon className="absolute right-[15px] my-2 mx-4" />
         )}
       </Link>
     </Tooltip>
