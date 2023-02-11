@@ -5,7 +5,7 @@ import Address from '../Address'
 
 import { Transition } from '@headlessui/react'
 
-export default function TabGroup({ isOpen, params }) {
+export default function TabGroup({ isOpen, clicked, params }) {
   const { slug } = params
 
   const chapter = chapters[slug]
@@ -53,6 +53,7 @@ export default function TabGroup({ isOpen, params }) {
               index={index}
               challenge={challenge}
               params={params}
+              clicked={clicked}
             />
           ))}
         </Transition.Child>

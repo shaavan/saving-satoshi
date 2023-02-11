@@ -16,11 +16,13 @@ export default function Tab({
   count,
   params,
   challenge,
+  clicked,
 }: {
   index: number
   count: number
   params: any
   challenge: Lesson
+  clicked: any
 }) {
   const { slug } = params
 
@@ -38,6 +40,7 @@ export default function Tab({
     <Link
       href={`/chapters/${slug}/${challenge.lessonId}`}
       title={challenge.title}
+      onClick={() => clicked()}
       className={clsx(
         'justify-left flex items-center border-t border-white/25 px-3 py-2 text-center text-lg text-white/50 transition duration-100 ease-in-out',
         {

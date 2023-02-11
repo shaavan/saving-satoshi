@@ -19,6 +19,10 @@ export default function Navbar({ params }) {
     setIsOpen(!isOpen)
   }
 
+  function handleTabClick() {
+    setIsOpen(false)
+  }
+
   return (
     <div className="left-0 top-0 w-full">
       <div className="flex items-stretch border-b border-white/80 text-white">
@@ -51,7 +55,7 @@ export default function Navbar({ params }) {
           <UserButton />
         </div>
       </div>
-      <Menu isOpen={isOpen} params={params} />
+      <Menu isOpen={isOpen} params={params} clicked={handleTabClick} />
     </div>
   )
 }

@@ -2,19 +2,6 @@ import React, { useState } from 'react'
 
 export default function HamburgerMenu(props) {
   const styles = {
-    container: {
-      // height: '32px',
-      // width: '32px',
-      // display: 'flex',
-      // flexDirection: 'column' as 'column',
-      // justifyContent: 'center',
-      // alignItems: 'left',
-      // cursor: 'pointer',
-      // padding: '4px',
-      // backgroundColor: 'blur',
-      // overflow: 'hidden',
-    },
-
     line: {
       height: '2px',
       width: '20px',
