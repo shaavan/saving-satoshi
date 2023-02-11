@@ -6,7 +6,7 @@ export default function Menu(props) {
   //props.isOpen
   const styles = {
     container: {
-      height: props.isOpen ? '100%' : 0,
+      height: props.isOpen ? '94.3%' : 0,
       width: '100vw',
       display: 'flex',
       flexDirection: 'column' as 'column',
