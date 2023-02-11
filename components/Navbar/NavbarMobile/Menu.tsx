@@ -6,12 +6,10 @@ export default function Menu(props) {
   //props.isOpen
   const styles = {
     container: {
-      height: props.isOpen ? '94.3%' : 0,
+      height: props.isOpen ? '100%' : 0,
       width: '100vw',
       display: 'flex',
       flexDirection: 'column' as 'column',
-      background: 'black',
-      opacity: 0.95,
       color: '#fafafa',
       transition: 'height 0.3s ease',
       zIndex: 2,
@@ -23,6 +21,7 @@ export default function Menu(props) {
 
   return (
     <div
+      className="blur"
       style={{
         ...styles.container,
         position: 'absolute',

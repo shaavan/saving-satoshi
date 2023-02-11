@@ -51,10 +51,10 @@ export default function Tab({
     >
       {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
       {status && !status.unlocked && (
-        <LockIcon className="absolute right-[15px] my-2 mx-4 opacity-50" />
+        <LockIcon className="absolute right-[15px] m-2 opacity-50" />
       )}
       {status && status.completed && (
-        <CheckIcon className="absolute right-[15px] my-2 mx-4" />
+        <CheckIcon className="absolute right-[15px] m-2" />
       )}
     </Link>
   )
