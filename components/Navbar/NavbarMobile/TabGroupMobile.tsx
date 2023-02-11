@@ -1,7 +1,7 @@
 import TabMobile from './TabMobile'
 import chapters from 'content/chapters'
 import lessons from 'content/lessons'
-import Address from './Address'
+import Address from '../Address'
 
 import { Transition } from '@headlessui/react'
 
@@ -21,8 +21,6 @@ export default function TabGroup({ isOpen, params }) {
 
     return { lessonId, title }
   })
-
-  console.log(challenges)
 
   return (
     <div className="mx-4 flex h-full flex-col items-stretch">

@@ -1,6 +1,6 @@
 import React from 'react'
 // import MenuItems from './MenuItems'
-import TabGroupMobile from 'components/Navbar/TabGroupMobile'
+import TabGroupMobile from 'components/Navbar/NavbarMobile/TabGroupMobile'
 
 export default function Menu(props) {
   //props.isOpen
