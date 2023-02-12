@@ -32,6 +32,7 @@ export default function Tab({
 
   const challengeId = isRouteLesson ? pathData.pop().split('-')[0] : undefined
   const isActive = challenge.lessonId === challengeId
+  const isLast = index === count - 1
 
   return (
     <Tooltip
@@ -56,6 +57,7 @@ export default function Tab({
             'hover:bg-black/25 hover:text-white hover:text-opacity-100':
               status && status.unlocked && !isActive,
             'bg-black/25 text-opacity-100': isActive,
+            'border-r': isLast,
           }
         )}
       >

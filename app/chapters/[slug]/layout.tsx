@@ -12,7 +12,7 @@ function getWindowWidth() {
 export default function Layout({ children, params }) {
   const isValidChapter = chapters[params.slug]
 
-  const desktopSize = 1500
+  const desktopSize = 800
 
   const windowWidth = getWindowWidth()
   const [isDesktopSize, setIsDesktopSize] = useState(windowWidth > desktopSize)
