@@ -48,7 +48,7 @@ export default function UserButton() {
   }
 
   return (
-    <div className="border-l border-white/25">
+    <div className="flex h-full items-center border-l border-white/25">
       <div>{renderIconButton()}</div>
       {isRegistered ? (
         <LoginModal
