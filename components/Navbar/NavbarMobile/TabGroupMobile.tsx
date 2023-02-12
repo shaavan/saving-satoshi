@@ -26,10 +26,10 @@ export default function TabGroup({ isOpen, clicked, params }) {
     <div className="mx-4 flex h-full flex-col items-stretch">
       <Transition
         show={isOpen}
-        enter="transition-opacity ease-linear duration-300"
+        enter="transition-opacity ease-linear duration-600"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        leave="transition-opacity ease-linear duration-300"
+        leave="transition-opacity ease-linear duration-800"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
@@ -39,10 +39,10 @@ export default function TabGroup({ isOpen, clicked, params }) {
         </div>
 
         <Transition.Child
-          enter="transition ease-in-out duration-300 transform"
+          enter="transition ease-in-out duration-600 transform"
           enterFrom="-translate-x-full"
           enterTo="translate-x-0"
-          leave="transition ease-in-out duration-300 transform"
+          leave="transition ease-in-out duration-800 transform"
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >

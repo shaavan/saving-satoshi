@@ -11,7 +11,7 @@ export default function Menu(props) {
       display: 'flex',
       flexDirection: 'column' as 'column',
       color: '#fafafa',
-      transition: 'height 0.3s ease',
+      transition: 'height 0.4s ease',
       zIndex: 2,
     },
     menuList: {
