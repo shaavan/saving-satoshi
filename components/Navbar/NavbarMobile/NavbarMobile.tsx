@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation'
 import Address from 'components/Navbar/Address'
-import TabGroup from 'components/Navbar/TabGroup'
 import ArrowLeftIcon from 'public/assets/icons/arrow-left.svg'
 import UserButton from '../UserButton'
 import HamburgerMenu from './HamburgerMenu'

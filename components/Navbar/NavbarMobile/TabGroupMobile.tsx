@@ -1,7 +1,6 @@
 import TabMobile from './TabMobile'
 import chapters from 'content/chapters'
 import lessons from 'content/lessons'
-import Address from '../Address'
 
 import { Transition } from '@headlessui/react'
 
