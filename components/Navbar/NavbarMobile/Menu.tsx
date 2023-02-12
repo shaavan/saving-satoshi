@@ -1,33 +1,18 @@
 import React from 'react'
-// import MenuItems from './MenuItems'
 import TabGroupMobile from 'components/Navbar/NavbarMobile/TabGroupMobile'
 
 export default function Menu(props) {
-  //props.isOpen
   const styles = {
     container: {
-      height: props.isOpen ? '100%' : 0,
-      width: '100vw',
-      display: 'flex',
-      flexDirection: 'column' as 'column',
-      color: '#fafafa',
-      transition: 'height 0.4s ease',
-      zIndex: 2,
-    },
-    menuList: {
-      paddingTop: '3rem',
+      height: props.isOpen ? 'calc(100% - 67px)' : 0,
+      transition: 'height 0.3s ease',
     },
   }
 
   return (
     <div
-      className="blur"
-      style={{
-        ...styles.container,
-        position: 'absolute',
-        left: '0',
-        top: '67px',
-      }}
+      className="absolute top-[67px] z-10 flex w-full flex-col blur"
+      style={styles.container}
     >
       {
         <TabGroupMobile
