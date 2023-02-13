@@ -12,7 +12,7 @@ export default function Menu(props) {
 
   return (
     <div
-      className={`absolute top-[${props.postition}px] z-10 flex w-full flex-col blur`}
+      className={`absolute top-[${props.postition}px] blur-opaque z-10 flex w-full flex-col`}
       style={styles.container}
     >
       {
