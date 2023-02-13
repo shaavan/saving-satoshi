@@ -5,7 +5,7 @@ import Address from 'components/Navbar/Address'
 import ArrowLeftIcon from 'public/assets/icons/arrow-left.svg'
 import UserButton from '../UserButton'
 import HamburgerMenu from './HamburgerMenu'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Menu from './Menu'
 import clsx from 'clsx'
 
@@ -13,6 +13,12 @@ export default function Navbar({ params }) {
   const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
+  const [menuPosition, setMenuPosition] = useState(0)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    setMenuPosition(ref.current.clientHeight)
+  })
 
   function handleButtonClick() {
     setIsOpen(!isOpen)
@@ -24,7 +30,10 @@ export default function Navbar({ params }) {
 
   return (
     <div className="left-0 top-0 w-full">
-      <div className="flex items-stretch border-b border-white/80 text-white">
+      <div
+        className="flex items-stretch border-b border-white/80 text-white"
+        ref={ref}
+      >
         <div>
           <button
             title="Back"
@@ -54,7 +63,12 @@ export default function Navbar({ params }) {
           <UserButton />
         </div>
       </div>
-      <Menu isOpen={isOpen} params={params} clicked={handleTabClick} />
+      <Menu
+        isOpen={isOpen}
+        params={params}
+        clicked={handleTabClick}
+        postition={menuPosition}
+      />
     </div>
   )
 }
