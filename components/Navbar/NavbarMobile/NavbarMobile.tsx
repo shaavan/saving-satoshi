@@ -67,7 +67,7 @@ export default function Navbar({ params }) {
         isOpen={isOpen}
         params={params}
         clicked={handleTabClick}
-        postition={menuPosition}
+        position={menuPosition}
       />
     </div>
   )

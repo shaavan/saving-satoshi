@@ -1,19 +1,19 @@
 import React from 'react'
 import TabGroupMobile from 'components/Navbar/NavbarMobile/TabGroupMobile'
+import clsx from 'clsx'
 
 export default function Menu(props) {
-  //props.postition
-  const styles = {
-    container: {
-      height: props.isOpen ? `calc(100% - ${props.postition}px)` : 0,
-      transition: 'height 0.3s ease',
-    },
-  }
+  let heightClass = props.isOpen
+    ? `h-[calc(100%_-_${props.position}px)]`
+    : 'h-0'
+
+  ;('w-[calc(100%-${divWidth}px)]')
+
+  console.log(heightClass)
 
   return (
     <div
-      className={`absolute top-[${props.postition}px] blur-opaque z-10 flex w-full flex-col`}
-      style={styles.container}
+      className={`absolute top-[${props.position}px] blur-opaque z-10 flex w-full flex-col transition-[height] ${heightClass}`}
     >
       {
         <TabGroupMobile
