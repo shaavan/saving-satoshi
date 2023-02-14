@@ -3,34 +3,20 @@
 import Navbar, { NavbarMobile } from 'components/Navbar'
 import chapters from 'content/chapters'
 import { useEffect, useState } from 'react'
-
-function getWindowWidth() {
-  const { innerWidth: width } = window
-  return width
-}
+import useMediaQuery from 'hooks/useMediaQuery'
 
 export default function Layout({ children, params }) {
   const isValidChapter = chapters[params.slug]
+  const isSmallScreen = useMediaQuery('(max-width: 767px)')
 
-  const desktopSize = 800
-
-  const windowWidth = getWindowWidth()
-  const [isDesktopSize, setIsDesktopSize] = useState(windowWidth > desktopSize)
-
-  const handleResize = () => setIsDesktopSize(window.innerWidth > desktopSize)
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  })
-
+  console.log(isSmallScreen)
   return (
     <div className="ch1-background flex flex-col">
       <div className="fix-grow-issue flex min-h-screen flex-col blur">
-        {isValidChapter && isDesktopSize ? (
-          <Navbar params={params} />
-        ) : (
+        {isValidChapter && isSmallScreen ? (
           <NavbarMobile params={params} />
+        ) : (
+          <Navbar params={params} />
         )}
         {children}
       </div>
