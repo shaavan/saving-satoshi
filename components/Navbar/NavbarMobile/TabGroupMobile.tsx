@@ -44,6 +44,7 @@ export default function TabGroup({ isOpen, clicked, params }) {
             '-translate-x-[110%]': !isOpen,
             'translate-x-0': isOpen,
           })}
+          style={{ transitionDelay: `${70 * (index + 1)}ms` }}
         >
           <TabMobile
             key={index}
