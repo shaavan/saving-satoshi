@@ -13,7 +13,7 @@ export default function Menu(props) {
 
   return (
     <div
-      className={`absolute top-[${props.position}px] blur-opaque z-10 flex w-full flex-col transition-[height] ${heightClass}`}
+      className={`absolute top-[${props.position}px] blur-opaque z-10 flex w-full flex-col transition-[height] duration-[400ms] ${heightClass}`}
     >
       {
         <TabGroupMobile

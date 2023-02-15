@@ -16,7 +16,6 @@
     "**/*.{js,jsx,ts,tsx}": "prettier --write"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.10",
     "@lionello/secp256k1-js": "^1.1.0",
     "@next/font": "13.0.4",
     "clsx": "^1.2.1",
