@@ -27,10 +27,10 @@ export default function TabGroup({ isOpen, clicked, params }) {
       <div
         className={clsx(
           'px-2 py-3 text-2xl text-white/50',
-          'duration-600 transition-opacity ease-linear',
+          'duration-800 transform transition ease-in-out',
           {
-            'opacity-0': !isOpen,
-            'opacity-100': isOpen,
+            '-translate-x-[110%]': !isOpen,
+            'translate-x-0': isOpen,
           }
         )}
       >
@@ -40,11 +40,11 @@ export default function TabGroup({ isOpen, clicked, params }) {
 
       {challenges.map((challenge, index) => (
         <div
-          className={clsx('duration-600 transform transition ease-in-out', {
+          className={clsx('duration-800 transform transition ease-in-out', {
             '-translate-x-[110%]': !isOpen,
             'translate-x-0': isOpen,
           })}
-          style={{ transitionDelay: `${70 * (index + 1)}ms` }}
+          style={{ transitionDelay: `${120 * (index + 1)}ms` }}
         >
           <TabMobile
             key={index}
