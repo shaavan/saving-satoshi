@@ -7,7 +7,7 @@ export default function HamburgerMenu(props) {
 
   return (
     <div
-      className="mr flex h-8 w-10 cursor-pointer flex-col items-start justify-center overflow-hidden border-r border-white/25 p-1"
+      className="mr flex h-full w-10 cursor-pointer flex-col items-start justify-center overflow-hidden border-r border-white/25 p-1"
       onClick={props.clicked}
     >
       <div
