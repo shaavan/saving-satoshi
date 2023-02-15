@@ -41,7 +41,7 @@ export default function Tab({
       title={challenge.title}
       onClick={() => clicked()}
       className={clsx(
-        'justify-left flex items-center border-t border-white/25 px-3 py-2 text-center text-lg text-white/50 transition duration-100 ease-in-out',
+        'justify-left flex items-center border-t border-white/25 py-[9.5px] text-center text-[21px] text-white/50 transition duration-100 ease-in-out',
         {
           'text-white text-opacity-50': !isActive,
           'hover:bg-black/25 hover:text-white hover:text-opacity-100':
@@ -53,10 +53,10 @@ export default function Tab({
     >
       {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
       {status && !status.unlocked && (
-        <LockIcon className="absolute right-[15px] m-2 opacity-50" />
+        <LockIcon className="absolute right-[15px] -mr-2 opacity-50" />
       )}
       {status && status.completed && (
-        <CheckIcon className="absolute right-[15px] m-2" />
+        <CheckIcon className="absolute right-[15px]" />
       )}
     </Link>
   )
