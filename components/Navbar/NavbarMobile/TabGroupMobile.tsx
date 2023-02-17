@@ -1,6 +1,5 @@
 import TabMobile from './TabMobile'
-import chapters from 'content/chapters'
-import lessons from 'content/lessons'
+import { chapters, lessons } from 'content'
 
 // import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
