@@ -2,7 +2,6 @@
 
 import Navbar, { NavbarMobile } from 'components/Navbar'
 import { chapters } from 'content'
-import { useEffect, useState } from 'react'
 import useMediaQuery from 'hooks/useMediaQuery'
 
 export default function Layout({ children, params }) {
