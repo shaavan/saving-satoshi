@@ -1,11 +1,14 @@
 import TabMobile from './TabMobile'
 import { chapters, lessons } from 'content'
+import { useLang, useTranslations } from 'hooks'
 
-// import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 export default function TabGroup({ isOpen, clicked, params }) {
   const { slug } = params
+
+  const lang = useLang()
+  const t = useTranslations(lang)
 
   const chapter = chapters[slug]
 
@@ -13,10 +16,10 @@ export default function TabGroup({ isOpen, clicked, params }) {
     return null
   }
 
-  const chapterMeta = chapter.metadata
+  const chapterMeta = chapter?.metadata
 
   const challenges = chapter.metadata.challenges.map((lessonId) => {
-    const { title } = lessons[lessonId].metadata
+    let { title } = lessons[lessonId].metadata
 
     return { lessonId, title }
   })
@@ -34,7 +37,7 @@ export default function TabGroup({ isOpen, clicked, params }) {
         )}
       >
         Chapter {chapterMeta.position + 1}.{' '}
-        <span className="ml-1 text-white">{chapterMeta.title}</span>
+        <span className="ml-1 text-white">{t(chapterMeta.title)}</span>
       </div>
 
       {challenges.map((challenge, index) => (

@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation'
 import CheckIcon from 'public/assets/icons/check.svg'
 import LockIcon from 'public/assets/icons/lock.svg'
 
-import { useStatus } from 'hooks'
-import { Lesson } from 'types'
+import { useLang, useStatus, useTranslations } from 'hooks'
+// import { Lesson } from 'types'
 
 export default function Tab({
   index,
@@ -20,12 +20,15 @@ export default function Tab({
   index: number
   count: number
   params: any
-  challenge: Lesson
+  challenge: { lessonId: string; title: string }
   clicked: any
 }) {
   const { slug } = params
 
+  const lang = useLang()
+  const t = useTranslations(lang)
   const pathName = usePathname()
+
   const pathData = pathName.split('/')
   const isRouteLesson = pathData.length === 4
 
@@ -38,7 +41,7 @@ export default function Tab({
   return (
     <Link
       href={`/chapters/${slug}/${challenge.lessonId}`}
-      title={challenge.title}
+      title={t(challenge.title)}
       onClick={() => clicked()}
       className={clsx(
         'justify-left flex items-center border-t border-white/25 py-[9.5px] text-center text-[21px] text-white/50 transition duration-100 ease-in-out',
@@ -51,7 +54,7 @@ export default function Tab({
         }
       )}
     >
-      {index + 1}. <span className="ml-1 text-white">{challenge.title}</span>
+      {index + 1}. <span className="ml-1 text-white">{t(challenge.title)}</span>
       {status && !status.unlocked && (
         <LockIcon className="absolute right-[15px] -mr-2 opacity-50" />
       )}
