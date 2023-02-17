@@ -59,7 +59,7 @@ export default function Tab({
         <LockIcon className="absolute right-[15px] -mr-2 opacity-50" />
       )}
       {status && status.completed && (
-        <CheckIcon className="absolute right-[15px]" />
+        <CheckIcon className="absolute right-[5px] h-[20px] w-[20px]" />
       )}
     </Link>
   )
