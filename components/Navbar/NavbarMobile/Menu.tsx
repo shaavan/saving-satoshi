@@ -7,7 +7,7 @@ export default function Menu(props) {
     <div
       id="lesson-navigation-menu"
       className={clsx(
-        'blur-opaque absolute z-10 flex w-full flex-col transition-[height] duration-[400ms] ease-out',
+        'absolute z-10 flex w-full flex-col bg-back drop-shadow-3xl backdrop-blur-4xl transition-[height] duration-[400ms] ease-out',
         {
           'delay-200': !props.isOpen,
         }
