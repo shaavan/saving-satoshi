@@ -2,9 +2,6 @@ import clsx from 'clsx'
 import React, { useState } from 'react'
 
 export default function HamburgerMenu(props) {
-  const className =
-    'h-0.5 w-5 bg-white transition-all ease-in-out origin-top-right'
-
   const aria_label = props.isOpen ? 'Close Menu' : 'Open Menu'
 
   return (
@@ -17,19 +14,27 @@ export default function HamburgerMenu(props) {
       aria-controls="lesson-navigation-menu"
     >
       <div
-        className={clsx(className, 'mb-[5px]', {
-          'transform-none': !props.isOpen,
-          'translate-x-0 -translate-y-[1.8px] -rotate-45': props.isOpen,
-        })}
+        className={clsx(
+          'h-0.5 w-5 origin-top-right bg-white transition-all ease-in-out',
+          'mb-[5px]',
+          {
+            'transform-none': !props.isOpen,
+            'translate-x-0 -translate-y-[1.8px] -rotate-45': props.isOpen,
+          }
+        )}
         aria-hidden="true"
       />
 
       <div
-        className={clsx(className, 'mt-[2px]', {
-          'w-[15px] transform-none': !props.isOpen,
-          'w-[20px] translate-x-[1.2px] translate-y-[3px] rotate-45':
-            props.isOpen,
-        })}
+        className={clsx(
+          'h-0.5 w-5 origin-top-right bg-white transition-all ease-in-out',
+          'mt-[2px]',
+          {
+            'w-[15px] transform-none': !props.isOpen,
+            'w-[20px] translate-x-[1.2px] translate-y-[3px] rotate-45':
+              props.isOpen,
+          }
+        )}
         aria-hidden="true"
       />
     </div>
