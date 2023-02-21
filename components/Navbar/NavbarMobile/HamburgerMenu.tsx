@@ -28,11 +28,10 @@ export default function HamburgerMenu(props) {
       <div
         className={clsx(
           'h-0.5 w-5 origin-top-right bg-white transition-all ease-in-out',
-          'mt-[2px]',
+          'mt-0.5',
           {
             'w-[15px] transform-none': !props.isOpen,
-            'w-[20px] translate-x-[1.2px] translate-y-[3px] rotate-45':
-              props.isOpen,
+            'w-5 translate-x-[1.2px] translate-y-[3px] rotate-45': props.isOpen,
           }
         )}
         aria-hidden="true"

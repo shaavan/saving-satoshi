@@ -28,7 +28,7 @@ export default function TabGroup({ isOpen, clicked, params }) {
     <div className="mx-4 flex h-full flex-col items-stretch">
       <div
         className={clsx(
-          'py-[8px] text-[27px] text-white/50',
+          'py-2 text-[27px] text-white/50',
           'duration-800 transform transition ease-in-out',
           {
             '-translate-x-[110%]': !isOpen,
