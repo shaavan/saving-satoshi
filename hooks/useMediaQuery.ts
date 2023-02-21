@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-const useMediaQuery = (query) => {
+export const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false)
 
   useEffect(() => {
@@ -16,5 +16,3 @@ const useMediaQuery = (query) => {
 
   return matches
 }
-
-export default useMediaQuery
