@@ -6,13 +6,10 @@ export default function Menu(props) {
   return (
     <div
       id="lesson-navigation-menu"
-      className={clsx(
-        'flex-l absolute z-10 w-full flex-col bg-back drop-shadow-3xl backdrop-blur-4xl transition-[height] duration-[400ms] ease-out',
-        {
-          'h-full': props.isOpen,
-          'h-0 delay-200': !props.isOpen,
-        }
-      )}
+      className={clsx('absolute z-10 w-full bg-back duration-[400ms]', {
+        'h-full': props.isOpen,
+        'h-0 delay-200': !props.isOpen,
+      })}
       style={{}}
       aria-modal="true"
       aria-hidden={!props.isOpen}
