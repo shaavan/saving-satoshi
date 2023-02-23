@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from 'react'
 import Menu from './Menu'
 import clsx from 'clsx'
 
-export default function Navbar({ params }) {
+export default function NavbarMobile({ params }) {
   const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +23,7 @@ export default function Navbar({ params }) {
   }
 
   return (
-    <div className="left-0 top-0 h-full w-full flex-1">
+    <div className="left-0 top-0 h-full w-full flex-1 md:hidden">
       <div className="flex items-stretch border-b border-white/80 text-white">
         <div>
           <button
