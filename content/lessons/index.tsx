@@ -5,6 +5,7 @@ import * as Genesis3 from './genesis/genesis-3'
 import * as Transacting1 from './transacting/transacting-1'
 import * as Transacting2 from './transacting/transacting-2'
 import * as Transacting3 from './transacting/transacting-3'
+import * as Outro from './outro'
 import * as Done from './done'
 
 export const lessons = {
@@ -15,5 +16,6 @@ export const lessons = {
   'transacting-1': Transacting1,
   'transacting-2': Transacting2,
   'transacting-3': Transacting3,
+  outro: Outro,
   done: Done,
 }
