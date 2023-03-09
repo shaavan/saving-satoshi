@@ -6,18 +6,17 @@ export default function Outro({ lang }) {
   const t = useTranslations(lang)
   return (
     <ChapterOutro
-      title={t('transacting_one.title')}
-      image="/assets/images/chapter-1-cover.jpg"
-      btn_text={'Hello'}
-      next={'/chapters/chapter-1/transacting-2'}
+      title={t('outro.title')}
+      image="/assets/images/chapter-1-outro.jpg"
+      btn_text={t('outro.button_text')}
+      next={'/chapters/chapter-1/done'}
     >
-      <p className="pt-2 text-lg">{t('transacting_one.paragraph_one')}</p>
-      <p className="pt-2 text-lg">{t('transacting_one.paragraph_two')}</p>
-      <p className="pt-2 text-lg">{t('transacting_one.paragraph_three')}</p>
+      <p className="pt-2">{t('outro.paragraph_one')}</p>
+      <p className="pt-6">{t('outro.paragraph_two')}</p>
     </ChapterOutro>
   )
 }
 
 export const metadata = {
-  title: 'transacting_one.title',
+  title: 'outro.title',
 }

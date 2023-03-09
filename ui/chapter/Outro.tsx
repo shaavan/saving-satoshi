@@ -2,18 +2,13 @@
 
 import Image from 'next/image'
 import { Button } from 'shared'
-import { chapters } from 'content'
-import { introductions } from 'content'
-import { redirect, usePathname } from 'next/navigation'
 import { useLang, useTranslations } from 'hooks'
 
 export default function Outro({
-  // title implies title in navbar
   title,
   image,
   children,
   btn_text,
-  // next implies next page
   next,
 }: {
   title: string
@@ -24,16 +19,6 @@ export default function Outro({
 }) {
   const lang = useLang()
   const t = useTranslations(lang)
-  // const chapterId = usePathname().split('/').pop()
-  // const chapter = chapters[chapterId]
-
-  // if (!chapter) {
-  //   return redirect('/chapters')
-  // }
-
-  // const intro = introductions[chapter.metadata.intro]
-
-  // image: '/assets/images/chapter-1-cover.jpg',
 
   return (
     <div className="flex grow">
@@ -49,28 +34,12 @@ export default function Outro({
           />
         </div>
         <div className="flex shrink basis-1/2">
-          <div className="flex flex-col gap-10 px-[15px] py-10 lg:px-10">
-            <div className="intro text-white">
-              <h1 className="font-cbrush text-5xl">{t(title)}</h1>
-              {/* <h2 className="pt-3 font-nunito text-xl font-black">
-                {t(intro.metadata.subtitle)}
-              </h2> */}
-              <div className="pt-3 font-nunito text-2xl">{children}</div>
+          <div className="flex flex-col gap-10 px-[15px] py-8 lg:px-10">
+            <div className="intro font-nunito text-xl text-white">
+              {children}
             </div>
             <div>
-              {/* {chapter.metadata.lessons.length > 0 ? ( */}
-              <Button
-                href={next}
-                // href={`/chapters/${chapterId}/${chapter.metadata.lessons[0]}`}
-                // classes="w-full md:w-auto"
-              >
-                {btn_text}
-              </Button>
-              {/* ) : ( */}
-              {/* <Button classes="w-full md:w-auto" disabled> */}
-              {/* Coming soon */}
-              {/* </Button> */}
-              {/* )} */}
+              <Button href={next}>{btn_text}</Button>
             </div>
           </div>
         </div>
