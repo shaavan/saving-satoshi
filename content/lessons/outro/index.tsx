@@ -12,7 +12,7 @@ export default function Outro({ lang }) {
       btnEnabled={true}
       next={'/chapters/chapter-1/done'}
     >
-      <p className="pt-2">{t('outro.paragraph_one')}</p>
+      <p>{t('outro.paragraph_one')}</p>
       <p className="pt-6">{t('outro.paragraph_two')}</p>
     </TextImage>
   )
