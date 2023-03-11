@@ -6,6 +6,7 @@ import { useLang, useTranslations } from 'hooks'
 
 export default function TextImageDisplay({
   children,
+  lang,
   imageSrc,
   imageAlt,
   btnText,
@@ -13,13 +14,13 @@ export default function TextImageDisplay({
   next,
 }: {
   children: any
+  lang: any
   imageSrc: string
   imageAlt: string
   btnText?: string
   btnEnabled: boolean
   next: string
 }) {
-  const lang = useLang()
   const t = useTranslations(lang)
 
   return (
@@ -36,7 +37,7 @@ export default function TextImageDisplay({
           />
         </div>
         <div className="flex shrink basis-1/2">
-          <div className="flex flex-col gap-10 px-[15px] py-10 lg:px-10">
+          <div className="flex flex-col gap-10 px-[15px] py-11 lg:px-10">
             <div className="intro text-white">
               <div className="font-nunito text-xl">{children}</div>
             </div>

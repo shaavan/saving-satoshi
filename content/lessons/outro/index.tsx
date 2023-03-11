@@ -6,6 +6,7 @@ export default function Outro({ lang }) {
   const t = useTranslations(lang)
   return (
     <TextImage
+      lang={lang}
       imageSrc="/assets/images/chapter-1-outro.jpg"
       imageAlt={t('outro.title')}
       btnText={t('outro.button_text')}
