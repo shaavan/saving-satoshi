@@ -9,6 +9,7 @@ import CheckIcon from 'public/assets/icons/check.svg'
 import LockIcon from 'public/assets/icons/lock.svg'
 
 import { useLang, useStatus, useTranslations } from 'hooks'
+import { lessons } from 'content'
 
 export default function Tab({
   index,
@@ -21,7 +22,10 @@ export default function Tab({
   params: any
   challenge: { lessonId: string; title: string }
 }) {
-  const { slug } = params
+  const { slug, lesson: lessonId } = params
+
+  const defaultTheme = 'bg-back'
+  const { theme = defaultTheme } = lessons[slug][lessonId].metadata
 
   const lang = useLang()
   const t = useTranslations(lang)
@@ -41,6 +45,7 @@ export default function Tab({
       id={`navbar-tab-tooltip-${index + 1}`}
       position="bottom"
       offset={0}
+      theme={theme}
       content={
         <div className="flex flex-col">
           <span className="text-m whitespace-nowrap leading-none text-white/50">
