@@ -4,6 +4,7 @@ import { TextImage, Text } from 'ui'
 export const metadata = {
   title: 'intro_two.title',
   image: '/assets/images/chapter-1-holocat.jpg',
+  theme: 'bg-[#32303D]',
 }
 
 export default function Holocat({ lang }) {
