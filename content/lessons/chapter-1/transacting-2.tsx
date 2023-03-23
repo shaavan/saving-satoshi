@@ -1,5 +1,3 @@
-'use client'
-
 import { useTranslations } from 'hooks'
 import { LessonInfo, Text, Title } from 'ui'
 import { InputChallenge } from 'ui'
