@@ -1,3 +1,4 @@
+'use client'
 import clsx from 'clsx'
 import { LessonDirection, LessonView } from 'types'
 import { useLessonContext } from 'ui'
