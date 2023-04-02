@@ -3,6 +3,7 @@ export const i18n = {
   locales: [
     { locale: 'en', label: 'English' },
     { locale: 'nl', label: 'Dutch' },
+    { locale: 'hi', label: 'Hindi' },
   ],
 } as const
 

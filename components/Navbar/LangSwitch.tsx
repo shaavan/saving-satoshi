@@ -9,7 +9,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 function generateNewUrl(pathname, language) {
-  const pathnameWithoutLanguage = pathname.replace(/^\/(en|nl)\b/, '')
+  const pathnameWithoutLanguage = pathname.replace(/^\/(en|nl|hi)\b/, '')
   const newUrl = `/${language}${pathnameWithoutLanguage}`
   return newUrl
 }
