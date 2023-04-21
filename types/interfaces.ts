@@ -50,6 +50,7 @@ export interface ProgressContextType {
   progress: string
   isLoading: boolean
   saveProgress: (key: string) => void | undefined
+  saveProgressLocal: (key: string) => void | undefined
 }
 
 export interface ModalContextType {
