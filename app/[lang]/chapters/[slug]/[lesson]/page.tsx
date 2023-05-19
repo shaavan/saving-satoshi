@@ -18,6 +18,7 @@ import { Loader } from 'shared'
 import { LoadingState } from 'types'
 import { notFound } from 'next/navigation'
 import Client from 'components/Client'
+import NumericInput from 'components/Util/NumericInput'
 
 export default function Page({ params }) {
   const searchParams = navigation.useSearchParams()
@@ -33,6 +34,8 @@ export default function Page({ params }) {
   const { progress, isLoading: isProgressLoading } = useProgressContext()
 
   const [unlocked, setUnlocked] = useState<number>(LoadingState.Idle)
+
+  // const [val, setVal] = useState(0)
 
   useEffect(() => {
     if (!isAccountLoading && !isProgressLoading) {
@@ -112,10 +115,15 @@ export default function Page({ params }) {
     return navigation.redirect(lastUnlockedLessonPath)
   }
 
+  // function handleChange(evt) {
+  //   setVal(evt.target.value)
+  // }
+
   return (
     unlocked && (
       <>
         <Head />
+        <NumericInput label={'string'} value={20} />
         <Lesson lang={params.lang} />
       </>
     )
