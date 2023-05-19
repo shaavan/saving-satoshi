@@ -17,6 +17,12 @@ export default function NumericInput({
   value?: number
   onChange?: (evt: any) => void
 }) {
+  if (value && defaultValue) {
+    throw new Error(
+      'Both value and defaultValue were given. Please provide one.'
+    )
+  }
+
   return (
     <input
       type="number"
@@ -24,8 +30,11 @@ export default function NumericInput({
       max={max}
       min={min}
       step={step}
-      defaultValue={defaultValue}
-      value={value}
+      //For uncontrolled component
+      defaultValue={defaultValue ?? undefined}
+      //For Controlled Component
+      value={value ?? undefined}
+      onChange={onChange ?? undefined}
     />
   )
 }

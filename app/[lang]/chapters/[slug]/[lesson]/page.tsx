@@ -35,7 +35,7 @@ export default function Page({ params }) {
 
   const [unlocked, setUnlocked] = useState<number>(LoadingState.Idle)
 
-  // const [val, setVal] = useState(0)
+  const [val, setVal] = useState(0)
 
   useEffect(() => {
     if (!isAccountLoading && !isProgressLoading) {
@@ -115,15 +115,19 @@ export default function Page({ params }) {
     return navigation.redirect(lastUnlockedLessonPath)
   }
 
-  // function handleChange(evt) {
-  //   setVal(evt.target.value)
-  // }
+  function handleChange(evt) {
+    setVal(evt.target.value)
+  }
 
   return (
     unlocked && (
       <>
         <Head />
-        <NumericInput label={'string'} value={20} />
+        <NumericInput
+          label={'string'}
+          value={val}
+          onChange={(e) => setVal(e.target.value)}
+        />
         <Lesson lang={params.lang} />
       </>
     )
