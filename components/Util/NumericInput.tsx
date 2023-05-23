@@ -1,3 +1,5 @@
+import { useEffect, useState, Dispatch, SetStateAction } from 'react'
+
 export default function NumericInput({
   label,
   name,
@@ -15,13 +17,36 @@ export default function NumericInput({
   step?: number
   defaultValue?: number
   value?: number
-  onChange?: (evt: any) => void
+  onChange?: Dispatch<SetStateAction<number>>
 }) {
-  if (value && defaultValue) {
-    throw new Error(
-      'Both value and defaultValue were given. Please provide one.'
-    )
+  // The logical operation here simulates XOR operation
+  // Only either of them should be TRUE at one time.
+  // This operation ensures that
+  if ((value && onChange) === defaultValue) {
+    throw new Error('Provide only either of value or defaultValue.')
   }
+
+  const isControlled = value !== undefined && onChange !== undefined
+
+  const [internalValue, setInternelValue] = useState(
+    isControlled ? value : defaultValue
+  )
+
+  function handleChange(evt) {
+    const newValue = evt.target.valueAsNumber
+
+    if (isControlled) {
+      onChange(newValue)
+    } else {
+      setInternelValue(newValue)
+    }
+  }
+
+  useEffect(() => {
+    if (isControlled) {
+      setInternelValue(value)
+    }
+  }, [isControlled, value])
 
   return (
     <input
@@ -30,11 +55,9 @@ export default function NumericInput({
       max={max}
       min={min}
       step={step}
-      //For uncontrolled component
-      defaultValue={defaultValue ?? undefined}
-      //For Controlled Component
-      value={value ?? undefined}
-      onChange={onChange ?? undefined}
+      value={isControlled ? internalValue : undefined}
+      defaultValue={isControlled ? undefined : internalValue}
+      onChange={handleChange}
     />
   )
 }

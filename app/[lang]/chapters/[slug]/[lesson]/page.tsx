@@ -35,7 +35,8 @@ export default function Page({ params }) {
 
   const [unlocked, setUnlocked] = useState<number>(LoadingState.Idle)
 
-  const [val, setVal] = useState(0)
+  // For testing of NumericInput. TO BE REMOVED
+  const [value, setValue] = useState(0)
 
   useEffect(() => {
     if (!isAccountLoading && !isProgressLoading) {
@@ -115,19 +116,15 @@ export default function Page({ params }) {
     return navigation.redirect(lastUnlockedLessonPath)
   }
 
-  function handleChange(evt) {
-    setVal(evt.target.value)
-  }
-
   return (
     unlocked && (
       <>
         <Head />
-        <NumericInput
-          label={'string'}
-          value={val}
-          onChange={(e) => setVal(e.target.value)}
-        />
+        {/* FOR TESTING. TO BE REMOVED */}
+        {/* Controlled Component */}
+        <NumericInput label={'Controlled'} value={value} onChange={setValue} />
+        {/* Uncontrolled Component */}
+        <NumericInput label={'Uncontrolled'} defaultValue={20} />
         <Lesson lang={params.lang} />
       </>
     )
