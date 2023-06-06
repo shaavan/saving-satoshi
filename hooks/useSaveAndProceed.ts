@@ -7,7 +7,7 @@ import {
 } from 'lib/progress'
 import { useRouter } from 'next/navigation'
 import { useProgressContext } from 'providers/ProgressProvider'
-import { usePathData, useLang } from 'hooks'
+import { usePathData, useLang, useLocalizedRoutes } from 'hooks'
 import { lessons } from 'content'
 import { useAuthContext } from 'providers/AuthProvider'
 
@@ -17,6 +17,7 @@ export default function useSaveAndProceed() {
   const { account } = useAuthContext()
   const { progress, saveProgress, saveProgressLocal } = useProgressContext()
   const { chapterId, lessonId } = usePathData()
+  const routes = useLocalizedRoutes()
 
   const chapterLessons = lessons?.[chapterId]
   const lesson = chapterLessons?.[lessonId]?.metadata ?? null
@@ -34,7 +35,7 @@ export default function useSaveAndProceed() {
       }
     }
 
-    router.push(lang + '/' + nextLessonPath)
+    router.push(routes.chaptersUrl + nextLessonPath)
   }
 
   return saveAndProceed

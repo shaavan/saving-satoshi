@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import { chapters, lessons } from 'content'
-import { usePathData, useTranslations } from 'hooks'
+import { usePathData, useTranslations, useLocalizedRoutes } from 'hooks'
 import {
   getLastUnlockedLessonPath,
   getLessonKey,
@@ -26,6 +26,8 @@ export default function Page({ params }) {
   const devParam = searchParams?.get('dev') || ''
   const dev = devParam === 'true'
   const t = useTranslations(params.lang)
+
+  const routes = useLocalizedRoutes()
 
   const chapterId = params.slug
   const chapterLessons = lessons[chapterId]
@@ -114,7 +116,7 @@ export default function Page({ params }) {
     isRestrictedFromLesson
   ) {
     console.warn(`lesson ${pathData.lessonId} is locked.`)
-    return navigation.redirect(lastUnlockedLessonPath)
+    return navigation.redirect(routes.chaptersUrl + lastUnlockedLessonPath)
   }
 
   return (
