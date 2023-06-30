@@ -11,6 +11,7 @@ import {
   TitleCard,
   HashFrequency,
   StartButton,
+  BoxDisplayer,
 } from 'ui'
 import { useState, useEffect } from 'react'
 import { Button } from 'shared'
@@ -295,6 +296,17 @@ export default function Mining1({ lang }) {
               />
             </Card>
           </div>
+          <Card className="flex" highlight={nonceHighlight}>
+            <TitleCard title={'Hash Rate'} disabled={false}></TitleCard>
+            <BoxDisplayer className="ml-10">
+              <span>25.00%</span>
+            </BoxDisplayer>
+            <HashFrequency
+              disabled={nonce === 0}
+              step={step}
+              hashPower={hashPower}
+            />
+          </Card>
         </div>
         <div
           className={`mb-5 flex w-full items-center px-[15px] transition-opacity md:mx-0 md:mb-0 md:mt-0 md:w-1/2 md:max-w-[405px] md:pl-[15px] md:pr-0 ${
